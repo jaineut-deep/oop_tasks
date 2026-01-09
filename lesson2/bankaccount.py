@@ -12,7 +12,26 @@
 
 
 class BankAccount:
-    pass
+    """Класс для представления банковского счета"""
+
+    def __init__(self, balance):
+        self._balance = balance
+
+    @property
+    def balance(self):
+        return f"{self._balance}"
+
+    def deposit(self, amount):
+        self._balance = self._balance + amount
+
+    def withdraw(self, amount):
+        self._balance = self._balance - amount
+
+    def close(self):
+        result = self._balance
+        self._balance = 0
+        return result
+
 
 
 # код для проверки 

@@ -14,7 +14,59 @@
 
 
 class User:
-    pass
+    """Класс для представления пользователя"""
+
+    admin = ""
+    session = set()
+
+    def __init__(self, name, password):
+        self._name = name
+        self._password = password
+
+    @property
+    def name(self):
+        return f"{self._name}"
+
+    @property
+    def password(self):
+        return f"{self._password}"
+
+    @password.setter
+    def password(self, password):
+        self._password = password
+
+    @property
+    def is_admin(self):
+        if self._name == self.admin:
+            return True
+        return False
+
+    @property
+    def _is_admin(self):
+        return
+
+    @_is_admin.setter
+    def _is_admin(self, status):
+        if str(status) == "True":
+            self.admin = self.name
+        elif str(status) == "False" and self.admin == self._name:
+            self.admin = ""
+
+    def _is_logged_in(self):
+        if self.name in self.session:
+            return True
+        return False
+
+    def login(self, password):
+        if password == self._password and self._name not in self.session:
+            self.session.add(self._name)
+            print(True)
+        elif password == self._password and self._name in self.session:
+            print(True)
+        return False
+
+    def logout(self):
+        self.session.discard(self._name)
 
 
 # код для проверки 
