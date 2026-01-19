@@ -9,7 +9,34 @@
 
 
 class MyList2:
-    pass
+    """Класс для представления списка"""
+
+    data: list
+
+    def __init__(self, data: list):
+        """Конструктор инициализирующий экземпляр классаю. Принимает список элементов."""
+
+        self.data = data
+
+    def __iter__(self):
+        """Магический метод, который возвращает итератор."""
+
+        self.n = -1
+        return self
+
+    def __next__(self):
+        """Магический метод, который возвращает следующий элемент последовательности."""
+
+        if self.n < len(self.data) - 1:
+            self.n += 1
+            return self.data[self.n]
+        else:
+            raise StopIteration
+
+    def __getitem__(self, item):
+        """Магический метод, который позволяет обратиться к элементу списка по индексу."""
+
+        return self.data[item]
 
 
 # код для проверки 
