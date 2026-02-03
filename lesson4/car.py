@@ -14,7 +14,44 @@
 
 
 class Car:
-    pass
+    """Класс для представления автомобиля."""
+
+    def __init__(self, make, model, year):
+        """Конструктор, инициализирующий экземпляр класса. Определяет атрибуты для экземпляра."""
+
+        self.make = make
+        self.model = model
+        self.year = year
+
+    def get_make(self):
+        """Метод, который возвращает марку автомобиля."""
+
+        return self.make
+
+    def get_model(self):
+        """Метод, который возвращает модель автомобиля."""
+
+        return self.model
+
+    def get_year(self):
+        """Метод, который возвращает год выпуска автомобиля."""
+
+        return self.year
+
+
+class ElectricCar(Car):
+    """Класс, наследующийся от класса Car, для представления электромобиля."""
+
+    def __init__(self, make, model, year, battery_size):
+        """Конструктор, инициализирующий экземпляр класса ElectricCar."""
+
+        super().__init__(make, model, year)
+        self.battery_size = battery_size
+
+    def get_battery_size(self):
+        """Метод, который возвращает размер батареи автомобиля."""
+
+        return self.battery_size
 
 
 # код для проверки 

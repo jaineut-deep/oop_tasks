@@ -12,7 +12,35 @@
 
 
 class Employee:
-    pass
+    """Класс для представления сотрудника."""
+
+    def __init__(self, name, salary):
+        """Конструктор, инициализирующий экземпляр класса: принимает имя сотрудника и его зарплату."""
+
+        self.name = name
+        self.salary = salary
+
+    def get_salary(self):
+        """Метод, который возвращает зарплату сотрудника."""
+
+        return self.salary
+
+
+class Manager(Employee):
+    """Класс, наследующийся от класса Employee, представляющий менеджера."""
+
+    def __init__(self, name, salary, bonus):
+        """Конструктор, инициализирующий экземпляр класса Manager, дочернего классу Employee: принимает имя,
+        зарплату и бонус менеджера.
+        """
+
+        super().__init__(name, salary)
+        self.bonus = bonus
+
+    def get_salary(self):
+        """Метод, который возвращает зарплату менеджера плюс его бонус."""
+
+        return super().get_salary() + self.bonus
 
 
 # код для проверки 
