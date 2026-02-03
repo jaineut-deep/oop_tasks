@@ -18,7 +18,53 @@
 
 
 class Person:
-    pass
+    """Класс для представления человека."""
+
+    def __init__(self, name, age):
+        """Конструктор, инициализирующий экземпляр класса Person. Принимает имя и возраст человека."""
+
+        self.name = name
+        self.age = age
+
+    def get_name(self):
+        """Метод, возвращающий имя человека."""
+
+        return self.name
+
+    def get_age(self):
+        """Метод, возвращающий возраст человека."""
+
+        return self.age
+
+
+class Employee2(Person):
+    """Класс, дочерний классу Person, для представления сотрудника."""
+
+    def __init__(self, name, age, salary):
+        """Конструктор, инициализирующий экземпляр класса Employee2. Принимает имя, возраст и зарплату сотрудника."""
+
+        super().__init__(name, age)
+        self.salary = salary
+
+    def get_salary(self):
+        """Метод, возвращающий зарплату сотрудника."""
+
+        return self.salary
+
+
+class Manager2(Employee2):
+    """Класс, дочерний классу Employee2, для представления менеджера."""
+
+    def __init__(self, name, age, salary, bonus):
+        """Конструктор, инициализирующий экземпляр класса Manager2. Принимает имя, возраст, зарплату и бонус менеджера."""
+
+        super().__init__(name, age, salary)
+        self.bonus = bonus
+
+    def get_bonus(self):
+        """Метод, возвращающий бонус менеджера."""
+
+        return self.bonus
 
 
 # код для проверки 

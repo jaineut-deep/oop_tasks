@@ -14,7 +14,31 @@
 
 
 class Bird:
-    pass
+    """Класс для представления птицы."""
+
+    def fly(self):
+        """Метод, который выводит сообщение "Flying"."""
+
+        print("Flying")
+
+
+class Penguin(Bird):
+    """Класс для представления пингвина."""
+
+    def fly(self):
+        """Метод, который выводит сообщение "I am a penguin and cannot fly"."""
+
+        print("I am a penguin and cannot fly")
+
+
+class Eagle(Bird):
+    """Класс для представления орла."""
+
+    def hunt(self):
+        """Метод, метод, который выводит сообщение "Hunting"."""
+
+        if self:
+            print("Hunting")
 
 
 # код для проверки 
