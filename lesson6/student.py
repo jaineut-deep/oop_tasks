@@ -11,9 +11,22 @@
 
 
 class Student:
+    """Класс для представления студента."""
 
-    def __init__(...):
-        ...
+    def __init__(self, name: str, course: str, rating: list[int]):
+        """Конструктор, инициализирующий экземпляр класса Student. Принимает name, course, rating."""
+
+        self.name = name
+        self.course = course
+        self.rating = rating
+
+    def avg_rate(self):
+        """Метод, возвращающий среднюю оценку студента за курс."""
+
+        try:
+            print(sum(self.rating) / len(self.rating))
+        except ZeroDivisionError:
+            print(0.0)
 
 
 # код для проверки
